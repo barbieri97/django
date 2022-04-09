@@ -1,0 +1,12 @@
+<form action="{% url 'enquete:vote' pergunta.id %}" method="post" >
+{% csrf_token %}
+<fieldset>
+    <legend><h1>{{ pergunta.texto_pergunta }}</h1></legend>
+    {% if mensagem_de_erro %}<p><strong>{{ mensagem_de_erro }}</strong></p>{% endif %}    
+    {% for resposta in pergunta.resposta_set.all %}
+        <input type="radio" name="resposta" id="resposta{{ forloop.counter }}" value="{{ resposta.id }}">
+        <label for="resposta{{ forloop.counter }}">{{ resposta.texto_resposta }}</label><br>
+    {% endfor %}
+</fieldset>
+<input type="submit", value='Votar'>
+</form>

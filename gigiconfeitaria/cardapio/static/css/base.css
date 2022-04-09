@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+:root {
+    --color1: #3BCC53;
+    --color2: #46F263;
+    --color3: #30A644;
+    --color4: #42E65E;
+    --color5: #1E662A;
+    --color6 :#9ccaa4;
+    
+    --fonte-mao:  'Pacifico', cursive;
+}
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+body {
+    min-height: 400px;
+}
+
+header {
+    background-image: linear-gradient(to bottom, var(--color4), var(--color5));
+    height: 100px;
+}
+
+header img {
+    height: 100px;
+    width: 100px;
+}
+
+header h1 {
+    padding: 11px;
+    color: white;
+    font-family: var(--fonte-mao);
+    text-align: center;
+    text-shadow: 2px 2px 1px #000000a1;
+    
+}
+
+nav {
+    background-color: var(--color5);
+    padding-bottom: 5px;
+}
+
+nav > a {
+    text-decoration: none;
+    color: white;
+    margin-left: 10px;
+    transition: .5s;
+}
+
+nav > a:hover {
+    background-color: #3bcc5391;
+    padding: 3px;
+    border-radius: 5px;
+}
+
+main {
+    background: #ffffff url('../imagens/coxinhapq2.jpg') no-repeat left top fixed;
+    background-size: cover;
+    min-height: 794px;
+}
+main a {
+    text-decoration: none;
+    color:black;
+}
+
+footer {
+    background-color: var(--color5);
+    height: 50px;
+}
+
+footer h3 {
+    color: white;
+    text-align: center;
+    
+}
+
+footer a {
+    text-decoration: none;
+    color:white;
+}

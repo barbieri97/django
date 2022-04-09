@@ -1,0 +1,35 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gigiconfeitaria | {% block titulo %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    {% block link %}{% endblock %}
+</head>
+<body>
+    <header>
+        <h1>
+            Gigi Confeitaria
+        </h1>
+    </header>
+    <nav>
+        <a href="/cardapio">Home</a>
+        <a href="#">Doces</a>
+        <a href="#">Salgados</a>
+    </nav>
+    <main>
+        {% block conteudo %}
+        {% endblock %}
+    </main>
+    <footer>
+        <h3>nossas redes sociais</h3>
+        <a href="#">Instagram</a>
+        <a href="#">Whatsapp</a>
+        <a href="#">Youtube</a>
+    </footer>
+</body>
+</html>

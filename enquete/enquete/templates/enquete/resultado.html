@@ -1,0 +1,9 @@
+<h1>{{ resposta.texto_resposta }}</h1>
+
+<ul>
+{% for resposta in pergunta.resposta_set.all %}
+    <li>{{ resposta.texto_resposta }} -- {{ resposta.votes }} vote{{ resposta.votes|pluralize }}</li>
+{% endfor %}
+</ul>
+
+<a href="{% url 'enquete:detalhe' pergunta.id %}">Votar denovo?</a>

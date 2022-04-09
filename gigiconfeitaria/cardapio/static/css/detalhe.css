@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+main {
+    text-align: center;
+}
+
+main h1 {
+    animation: fade 2s;
+    width: max-content;
+    background-color: #9ccaa4;
+    color: #0b2510;
+    margin: auto;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px black;
+    margin-bottom: 10px;
+}
+div#pai{
+    margin-top: 50px;
+}
+
+div.filho{
+    animation: fade 1s;
+    display: inline-table;
+    margin: 100px 50px;
+    background-color: #9ccaa4;
+    height: 400px;
+    width: 320px;
+    box-shadow: 2px 2px 4px #00000098;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+div h2 {
+    margin-top: 10px;
+}
+div p {
+    text-align: left;
+    padding: 10px;
+}
+
+
+form {
+    margin-top: 10px;
+    text-align: left;
+    padding: 10px;
+    background-color:#9ccaa4;
+    width: max-content;
+    margin-left: 5px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px #00000098;
+    position: relative;
+    bottom: 10px;
+    left: 10px;
+}
+
+input {
+    animation: fade 2s;
+    font-family: 'Pacifico', cursive;
+    color: #0b2510;
+    font-size: 1em;
+    padding: 5px;
+    background-color: transparent;
+    border: 0px;
+    transition: .5s;
+}
+
+input:hover {
+    background-color: #bdc5be;
+    border-radius: 10px;
+    font-size: 1.5em;
+    
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

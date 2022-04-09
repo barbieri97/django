@@ -1,0 +1,20 @@
+{% extends 'cardapio/base.html' %}
+{% load static %}
+
+{% block titulo %}favoritos{% endblock %}
+
+{% block link %} <link rel="stylesheet" href="{% static 'css/favorito.css' %}"> {% endblock %}
+
+{% block conteudo %}
+{% if favoritos %}
+<br>
+    <h1>Queridinhos dos clientes</h1>
+    {% for favorito in favoritos %}
+        <li>
+            <a href="{% url 'cardapio:detalhe' favorito.slug %}">{{ favorito.nome }} - {{ favorito.voto }} voto{{ favorito.voto|pluralize }}</a>
+        </li>
+    {% endfor %}
+{% endif %}
+
+<a href="{% url 'cardapio:index' %}">Voltar para o cardápio</a>
+{% endblock %}

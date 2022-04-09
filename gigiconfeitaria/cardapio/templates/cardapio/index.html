@@ -1,0 +1,27 @@
+{% extends 'cardapio/base.html' %}
+{% load static %}
+
+{% block titulo %}Cardapio{% endblock %}
+
+{% block link %} <link rel="stylesheet" href="{% static 'css/index.css' %}"> {% endblock %}
+
+{% block conteudo %}
+
+{% if produtos %}
+<br>
+<h1>Nossos principais produtos</h1>
+
+    {% for produto in produtos %}
+    <div>
+        <h2>
+            <a href="{% url 'cardapio:detalhe' produto.slug %}">
+                {{ produto.nome }}
+            </a>
+        </h2>
+    </div>
+        {% endfor %}
+    <br>
+{% else %}
+    <p>nenhum produto foi encontrado</p>
+{% endif %}
+{% endblock %}

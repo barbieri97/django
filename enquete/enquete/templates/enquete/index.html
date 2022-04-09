@@ -1,0 +1,13 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'enquete/estilo.css' %}", type="text/css">
+
+{% if ultimas_perguntas %}
+    <ul>
+    {% for pergunta in ultimas_perguntas %}
+        <li><a href="{% url 'enquete:detalhe' pergunta.id %}">{{ pergunta.texto_pergunta }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>nenhuma pergunta foi encontrada</p>
+{% endif %}

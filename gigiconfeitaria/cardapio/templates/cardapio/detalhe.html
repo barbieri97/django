@@ -1,0 +1,32 @@
+{% extends 'cardapio/base.html' %}
+{% load static %}
+
+{% block titulo %}{{ detalhes.nome }}{% endblock %}
+
+{% block link %} <link rel="stylesheet" href="{% static 'css/detalhe.css' %}"> {% endblock %}
+ 
+
+{% block conteudo %}
+{% if detalhes %}
+    <br>
+    <h1>{{ detalhes.nome }}</h1>
+    <div id="pai">
+
+        <div class="filho">
+            <h2>informações nutricionais</h2>
+            <p>{{ detalhes.caracteristica.descricao|linebreaks }}</p>
+        </div>
+        <div class="filho"> 
+            <h2>ingredientes</h2>
+            <p>{{ detalhes.caracteristica.ingredientes|linebreaks }}</p>
+        </div>
+    </div>
+        
+{% endif %}
+
+<form action="{% url 'cardapio:favorito' detalhes.id %}" method="post" >
+    {% csrf_token %}
+        <input type="submit" name="resposta" id="resposta{{ detalhes.nome }}" value="eu amo {{ detalhes.slug }}">
+</form>
+
+{% endblock %}
